@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "kctal-9390"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "kctal-9390"
+  template:
+    metadata:
+      labels:
+        app: "kctal-9390"
+    spec:
+      containers:
+        - name: "kctal-9390"
+          image: "crtal.azurecr.io/kctal"
+          ports:
+          - containerPort: 80
